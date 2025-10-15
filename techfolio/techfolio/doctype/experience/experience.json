@@ -1,0 +1,82 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-17 13:06:12.740511",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "company_name",
+  "job_role",
+  "company_logo",
+  "date_of_joining",
+  "is_current_company",
+  "leaving_date",
+  "project_description",
+  "key_skill"
+ ],
+ "fields": [
+  {
+   "fieldname": "company_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Company Name"
+  },
+  {
+   "fieldname": "company_logo",
+   "fieldtype": "Attach Image",
+   "label": "Company_logo"
+  },
+  {
+   "fieldname": "date_of_joining",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date of Joining"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_current_company",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Current Company"
+  },
+  {
+   "fieldname": "leaving_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Leaving Date"
+  },
+  {
+   "fieldname": "key_skill",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Key Skill",
+   "options": "Key Skill"
+  },
+  {
+   "fieldname": "job_role",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Job Role"
+  },
+  {
+   "fieldname": "project_description",
+   "fieldtype": "Small Text",
+   "label": "Project Description"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-09-17 19:16:23.360849",
+ "modified_by": "Administrator",
+ "module": "techfolio",
+ "name": "Experience",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

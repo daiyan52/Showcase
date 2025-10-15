@@ -1,0 +1,24 @@
+{
+  "name": "techfolio",
+  "version": "1.0.0",
+  "description": "techfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "cd Techfolio && yarn install",
+    "dev": "cd Techfolio && yarn dev",
+    "build": "cd Techfolio && yarn build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "framer-motion": "^12.23.12",
+    "lucide-react": "^0.544.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.9.1"
+  }
+}
