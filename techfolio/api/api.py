@@ -62,14 +62,76 @@ def skills():
     }
 
 
+# import frappe
+# from frappe.utils import validate_email_address
+
+# @frappe.whitelist(allow_guest=True)
+# def submit_get_in_touch(name1: str, email: str, phone: str = None, message: str = None):
+#     """
+#     Public API to create a Get in Touch entry with just 4 fields.
+#     """
+#     if not name1 or not email:
+#         frappe.throw("Name and Email are required.")
+
+#     if not validate_email_address(email, throw=False):
+#         frappe.throw("Invalid email address.")
+
+#     doc = frappe.get_doc({
+#         "doctype": "Get in Touch",
+#         "name1": name1,
+#         "email": email,
+#         "phone": phone,
+#         "message": message,
+#     })
+
+#     doc.insert(ignore_permissions=True)
+
+#     return {"status": "success", "docname": doc.name}
+# import frappe
+# from frappe.utils import validate_email_address
+
+# @frappe.whitelist(allow_guest=True)
+# def submit_get_in_touch():
+#     data = frappe.request.get_json() or {}
+
+#     name1 = data.get("name1")
+#     email = data.get("email")
+#     phone = data.get("phone")
+#     message = data.get("message")
+
+#     if not name1 or not email:
+#         frappe.throw("Name and Email are required.")
+
+#     if not validate_email_address(email, throw=False):
+#         frappe.throw("Invalid email address.")
+
+#     doc = frappe.get_doc({
+#         "doctype": "Get in Touch",
+#         "name1": name1,
+#         "email": email,
+#         "phone": phone,
+#         "message": message,
+#     })
+
+#     doc.insert(ignore_permissions=True)
+
+#     return {
+#         "status": "success",
+#         "docname": doc.name
+#     }
+
 import frappe
 from frappe.utils import validate_email_address
 
 @frappe.whitelist(allow_guest=True)
-def submit_get_in_touch(name1: str, email: str, phone: str = None, message: str = None):
-    """
-    Public API to create a Get in Touch entry with just 4 fields.
-    """
+def submit_get_in_touch():
+    data = frappe.request.get_json(silent=True) or frappe.form_dict or {}
+
+    name1 = data.get("name1")
+    email = data.get("email")
+    phone = data.get("phone")
+    message = data.get("message")
+
     if not name1 or not email:
         frappe.throw("Name and Email are required.")
 
@@ -86,8 +148,10 @@ def submit_get_in_touch(name1: str, email: str, phone: str = None, message: str 
 
     doc.insert(ignore_permissions=True)
 
-    return {"status": "success", "docname": doc.name}
-
+    return {
+        "status": "success",
+        "docname": doc.name
+    }
 
 
 @frappe.whitelist(allow_guest=True)
